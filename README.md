@@ -43,7 +43,7 @@ GUSER=your_account@gmail.com
 Клиент "Веб-приложение"   
 Uri перенаправления: http://localhost:3000/oauth2callback   
    
-после чего скачать файл JSON и сложить в *../config/credentials.json*   
+после чего скачать файл JSON и сложить в *.src/config/credentials.json*   
 После запуска откроется страница, запрашивающая доступы   
    
 ##### Запустить сервис
