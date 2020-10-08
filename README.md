@@ -38,19 +38,19 @@ cp .env.example .env
 ## GMAIL CREDENTIALS
 GUSER=your_account@gmail.com 
 ```
-Для работы API Gmail необходимо сформировать идентификаторы клиентов OAuth 2.0 
-[API Console](https://console.developers.google.com/apis/credentials)
-Клиент "Веб-приложение"
-Uri перенаправления: http://localhost:3000/oauth2callback
-
-после чего скачать в виде JSON и сложить в *../config/credentials.json*
-После запуска откроется страница, запрашивающая доступы.
-
-Запустить сервис
+Для работы API Gmail необходимо сформировать идентификаторы клиентов OAuth 2.0   
+[API Console](https://console.developers.google.com/apis/credentials)   
+Клиент "Веб-приложение"   
+Uri перенаправления: http://localhost:3000/oauth2callback   
+   
+после чего скачать файл JSON и сложить в *../config/credentials.json*   
+После запуска откроется страница, запрашивающая доступы   
+   
+##### Запустить сервис
 ```
 npm start
 ```
-Запустить линтер. Настроен Airbnb Style Guide
+##### Запустить линтер. Настроен Airbnb Style Guide
 ```
 npm run lint
 ```
