@@ -17,6 +17,5 @@ module.exports = {
 
   gmail: {
     user: process.env.GUSER || '',
-    password: process.env.GPASS || '',
   },
 };
