@@ -6,7 +6,8 @@ const config = require('../config/config');
 const redisClient = redis.createClient(config.redis);
 const asyncRedisClient = asyncRedis.decorate(redisClient);
 const Mail = require('../models/mail');
-const { send } = require('../controllers/sender');
+const gmail = require('./sender');
+
 
 asyncRedisClient
   .on('connect', () => console.log('Redis - successful connection ...'))
@@ -14,10 +15,10 @@ asyncRedisClient
   .on('reconnecting', () => console.log('Redis reconnecting...'));
 
 const handleTask = async (id) => {
-  await Mail.findOne({ _id: id }, ((error, mail) => {
+  await Mail.findOne({ _id: id }, (async (error, mail) => {
     if (error || !mail) return console.log('Queue error: ', error);
 
-    return send(mail);
+    return gmail.send(mail);
   }));
   return true;
 };

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const config = require('./config/config.js');
 const routes = require('./routes/index');
 const redis = require('./controllers/queue');
+const gmail = require('./controllers/sender');
 
 const app = express();
 
@@ -26,3 +27,4 @@ mongoose.connection
   .on('reconnected', () => console.log('Database reconnected'));
 
 redis.queueManagerStart();
+gmail.init();
